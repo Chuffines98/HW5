@@ -1,0 +1,15 @@
+<div>
+
+  <h1> {{ pageTitle}} </h1>
+  <hr />
+  <form method="POST" action="{{url_for('add_game') }}">
+
+    {{ form.csrf_token }}
+    {{ form.game_name.label }} {{ form.game_name(size=20) }}
+    {{ form.dev_name.label }} {{ form.dev_name(size=20) }}
+
+    <input type="submit" value="Add Game">
+
+  </form>
+
+</div>

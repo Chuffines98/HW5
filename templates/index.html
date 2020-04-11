@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<h1> Home Page </h1>
+
+<a href="/add_game">Click Here to Add A Game</a>
+	<table border="solid" cellpadding="4" width="7%">
+		<tr>
+<th>ID</th>
+<th>GameName</th>
+<th>DevName</th>
+<th>Action</th>
+		 </tr>
+
+		 {% for game in games %}
+		 <tr>
+				<td>{{game.id}}</td>
+				<td>{{game.game_name}}</td>
+				<td>{{game.dev_name}}</td>
+				<td>
+					<a href="/delete/{{game.id}}">delete</a>
+					<a href="/update/{{game.id}}">update</a>
+				</td>
+		 </tr>
+		 {% endfor %}
+	</table>
+
+
+{% endblock %}
